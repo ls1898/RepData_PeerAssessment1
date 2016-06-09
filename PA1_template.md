@@ -45,7 +45,7 @@ all_daily_steps <- activity %>% group_by(date) %>% summarise(steps=sum(steps, na
 hist(all_daily_steps$steps, breaks = 20, col = "pink", xlab = "Daily steps", main = "Daily steps histogram")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](figure/unnamed-chunk-3-1.png)<!-- -->
 
 
 
@@ -86,7 +86,7 @@ We'll now plot the average daily activity over the 5-minute intervals
 plot(x = interval_steps$interval, y = interval_steps$average_steps, type = "l", col = "orange", xlab = "5 minute interval", ylab = "Average number of steps across all days", main = "Average daily activity pattern")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](figure/unnamed-chunk-7-1.png)<!-- -->
 
 
 ####Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -126,7 +126,7 @@ imputed_daily_steps <- filled_steps %>% group_by(date) %>% summarise(imputed_ste
 hist(imputed_daily_steps$imputed_steps, breaks = 20, col = "light green", xlab = "Daily steps", main = "Imputed daily steps histogram")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](figure/unnamed-chunk-11-1.png)<!-- -->
 
 ```r
 mean_imputed <- mean(imputed_daily_steps$imputed_steps)
@@ -166,4 +166,4 @@ weekend_interval_steps <- filled_steps %>% group_by(weekendFactor, interval) %>%
 xyplot(weekend_interval_steps$average_steps~weekend_interval_steps$interval | weekend_interval_steps$weekendFactor, layout = c(1,2), type = "l", xlab = "Interval", ylab = "Average Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](figure/unnamed-chunk-14-1.png)<!-- -->
